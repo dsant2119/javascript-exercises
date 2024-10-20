@@ -1,11 +1,7 @@
 const repeatString = function(word, num) {
-    if (num < 0)
-        return 'ERROR';
-    else if (num === 0)
-        return '';
-
+    if (num < 0)    return 'ERROR';
     newString = '';
-
+    
     for(i = 0; i < num; i++)
         newString += word;
 
