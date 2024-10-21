@@ -3,6 +3,11 @@ const reverseString = function(word) {
         return word;
 
     return  reverseString(word.slice(1)) + word.charAt(0);
+
+    /*
+        Non-recursive, super simple way:
+        return string.split("").reverse().join("");
+    */
 };
 
 console.log(reverseString('word'));
