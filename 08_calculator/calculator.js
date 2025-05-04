@@ -15,9 +15,20 @@ const multiply = function (numArr) {
   else return numArr.reduce((accumulator, value) => accumulator * value, 1);
 };
 
-const power = function () {};
+const power = function (num1, num2) {
+  let result = 1;
 
-const factorial = function () {};
+  for (let i = 0; i < num2; i++) {
+    result *= num1;
+  }
+
+  return result;
+};
+
+const factorial = function (num) {
+  if (num === 0) return 1;
+  else return num * factorial(num - 1);
+};
 
 // Do not edit below this line
 module.exports = {
