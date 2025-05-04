@@ -6,7 +6,9 @@ const subtract = function (num1, num2) {
   return num1 - num2;
 };
 
-const sum = function () {};
+const sum = function (numArr) {
+  return numArr.reduce((accumulator, value) => accumulator + value, 0); // Note the comma before the zero separates the clbk fn args from the initial value arg.
+};
 
 const multiply = function () {};
 
