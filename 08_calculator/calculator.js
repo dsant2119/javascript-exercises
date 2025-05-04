@@ -10,7 +10,10 @@ const sum = function (numArr) {
   return numArr.reduce((accumulator, value) => accumulator + value, 0); // Note the comma before the zero separates the clbk fn args from the initial value arg.
 };
 
-const multiply = function () {};
+const multiply = function (numArr) {
+  if (numArr.includes(0)) return 0;
+  else return numArr.reduce((accumulator, value) => accumulator * value, 1);
+};
 
 const power = function () {};
 
