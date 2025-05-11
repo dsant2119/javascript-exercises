@@ -1,25 +1,20 @@
 const palindromes = function (str) {
-    // Process string
-
+    // Process string. To lower. Get rid of punctuation.
+    const newString = processString(str);
     let start = 0;
-    let end = str.length - 1;
-    let pal = false;
+    let end = newString.length - 1;
 
-    if (str.length % 2 != 0)
-        while (start != end) {
-            start++;
-            end--;
-            if (str[start] === str[end]) pal = true;
-        }
-    else
-        while (start != end - 1) {
-            counter++;
-            start++;
-            end--;
-            if (str[start] === str[end]) pal = true;
-        }
-    return pal;
+    while (start < end) {
+        start++;
+        end--;
+        if (newString[start] !== newString[end]) return false;
+    }
+    return true;
 };
+
+function processString(str) {
+    return str.toLowerCase().replace(/[\.,!?;:'"\s]/g, "");
+}
 
 // Do not edit below this line
 module.exports = palindromes;
