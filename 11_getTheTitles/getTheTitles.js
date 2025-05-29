@@ -1,14 +1,3 @@
-const books = [
-    {
-        title: "Book",
-        author: "Name",
-    },
-    {
-        title: "Book2",
-        author: "Name2",
-    },
-];
-
 const getTheTitles = function (arr) {
     let newArr = [];
     arr.forEach((element) => {
@@ -16,9 +5,9 @@ const getTheTitles = function (arr) {
     });
 
     return newArr;
-};
 
-console.log(getTheTitles(books));
+    //  One-liner: return arr.map((book) => book.title);
+};
 
 // Do not edit below this line
 module.exports = getTheTitles;
