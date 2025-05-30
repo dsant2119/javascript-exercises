@@ -1,15 +1,15 @@
 const findTheOldest = function (array) {
     const sorted = array.sort((a, b) => {
         const currentDate = new Date().getFullYear();
-        const ageA = -111;
-        const ageB = -111;
+        let ageA = -111;
+        let ageB = -111;
 
         if (a.yearOfDeath != undefined && b.yearOfDeath != undefined) {
-            const ageA = a.yearOfDeath - a.yearOfBirth;
-            const ageB = b.yearOfDeath - b.yearOfBirth;
+            ageA = a.yearOfDeath - a.yearOfBirth;
+            ageB = b.yearOfDeath - b.yearOfBirth;
         } else {
-            const ageA = currentDate - a.yearOfBirth;
-            const ageB = currentDate - b.yearOfBirth;
+            ageA = currentDate - a.yearOfBirth;
+            ageB = currentDate - b.yearOfBirth;
         }
         return ageB - ageA;
     });
