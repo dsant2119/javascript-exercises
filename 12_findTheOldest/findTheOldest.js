@@ -1,20 +1,20 @@
-const findTheOldest = function (array) {
-    const sorted = array.sort((a, b) => {
-        const currentDate = new Date().getFullYear();
-        let ageA = -111;
-        let ageB = -111;
+const calculateAge = (person) => {
+    const currentYear = new Date().getFullYear();
+    return (person.yearOfDeath || currentYear) - person.yearOfBirth;
+};
 
-        if (a.yearOfDeath != undefined && b.yearOfDeath != undefined) {
-            ageA = a.yearOfDeath - a.yearOfBirth;
-            ageB = b.yearOfDeath - b.yearOfBirth;
-        } else {
-            ageA = currentDate - a.yearOfBirth;
-            ageB = currentDate - b.yearOfBirth;
-        }
-        return ageB - ageA;
+const findTheOldest = (array) => {
+    // Use reduce to iterate through the array and keep track of the oldest person found so far
+    return array.reduce((oldest, currPerson) => {
+        // Calculate the age of the current person
+        const currAge = calculateAge(currPerson);
+        // Calculate the age of the oldest person found so far
+        const oldestAge = calculateAge(oldest);
+
+        // Compare the ages and return whichever person is older
+        // This returned person becomes the new 'oldest' for the next iteration
+        return currAge > oldestAge ? currPerson : oldest;
     });
-
-    return sorted[0];
 };
 
 // Do not edit below this line
